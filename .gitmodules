@@ -1,0 +1,3 @@
+[submodule "works/shell00"]
+	path = works/shell00
+	url = git@github.com:Yayawak/shell00.git
