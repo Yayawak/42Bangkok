@@ -1,0 +1,93 @@
+
+autocmd BufWritePre * :%s/\s+$//e "remove trailing whitespace onsave
+set nu
+set rnu
+syntax on
+filetype indent plugin on
+set autoindent
+set smartindent
+set tabstop=2
+set backspace=indent,eol,start
+
+colorscheme delek
+colorscheme peachpuff
+colorscheme zellner
+colorscheme morning
+
+colorscheme darkblue
+colorscheme elflord
+colorscheme industry
+colorscheme koehler
+colorscheme murphy
+colorscheme ron
+colorscheme torte
+
+let darkthemes = ['darkblue', 'elflord', 'industry', 'koehler', 'murphy', 'ron']
+let whitethemes = ['delek', 'morning', 'peachpuff', 'zellner']
+function Rand()
+    return str2nr(matchstr(reltimestr(reltime()), '\v\.@<=\d+')[1:])
+endfunction
+execute 'colorscheme' darkthemes[Rand() % len(darkthemes)-1]
+
+"bug : can not random themes
+"let g:random_diabled = 0 "disable random themes plugin
+"let g:random_scheme = 1
+"let g:ariline_integration = 1
+let g:airline_theme='molokai'
+
+
+execute pathogen#infect()
+
+call plug#begin()
+"Plug 'Sammyalhashe/random_colorscheme.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'dense-analysis/ale'
+Plug 'preservim/nerdtree'
+call plug#end()
+
+" Vundle Plugins
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'scrooloose/syntastic' "syntax error checker
+Plugin 'jiangmiao/auto-pairs' "auto pair paratheses
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
+
+let g:airline_theme='sierra'
+let g:airline_powerline_fonts = 1
+
+
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
+set clipboard=unnamed
+
+set mouse=a
+set smarttab
+set shiftwidth=4
+set tabstop=4
+" Auto-indent
+set ai
+" Smart indent
+set si
+set wrap
+
+" Copy and paste to system clipboard
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+" Add the 42 stdheader command
+try
+	source /.vim/stdheader.vim
+catch
+	" silently fail if there is no stdheader file
+endtry
+
