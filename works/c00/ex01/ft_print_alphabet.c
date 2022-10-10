@@ -1,17 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athawebo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/09 20:24:39 by athawebo          #+#    #+#             */
-/*   Updated: 2022/10/09 23:20:31 by athawebo         ###   ########.fr       */
+/*   Created: 2022/10/09 20:49:13 by athawebo          #+#    #+#             */
+/*   Updated: 2022/10/09 23:21:11 by athawebo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<unistd.h>
 
-void	ft_putchar(char c)
+#include <unistd.h>
+
+void	ft_print_alphabet(void)
 {
-	write(1, &c, 1);
+	char	start;
+
+	start = 'a';
+	while (start <= 'z')
+	{
+		write(1, &start, 1);
+		start++;
+	}
 }
+

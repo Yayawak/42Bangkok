@@ -31,7 +31,7 @@ void ft_print_comb2() {
 		counter++;
 	}
 	ft_putchar('\n');
-	ft_putchar(counter +'0');
+//	ft_putchar(counter +'0');
 
 }
 int main() {
