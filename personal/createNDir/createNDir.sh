@@ -23,7 +23,7 @@ do
 	else	
 		create_name="$prefix_name$i"
 	fi
-	# mkdir $create_name
-	echo "$create_name"
-	# echo "$create_name created."
+	mkdir $create_name
+	# echo "$create_name"
+	echo "$create_name created."
 done
