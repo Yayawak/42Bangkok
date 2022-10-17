@@ -4,66 +4,69 @@
 
 void	visualize_next_prime(int guess_prime, int start, int end)
 {
-	/* int start; */
-	/* int	end; */
-	int	next_prime;
+		/* int start; */
+		/* int	end; */
+		int	next_prime;
 
-	/* start = 0; */
-	/* end = 30; */
-	next_prime = ft_find_next_prime(guess_prime);
-	printf("\n");
-	while (start < end)
-	{
-		if (start == 0)
-			printf("%d.", start);
-		/* if (start == guess_prime) */
-		else if (start == guess_prime)
+		/* start = 0; */
+		/* end = 30; */
+		next_prime = ft_find_next_prime(guess_prime);
+		printf("\n");
+		while (start < end)
 		{
-			printf("%dx", guess_prime);
+				if (start == 0)
+						printf("%d.", start);
+				/* if (start == guess_prime) */
+				else if (start == guess_prime)
+				{
+						printf("\033[0;32m");
+						printf("%dx", guess_prime);
+				}
+				else if (start == next_prime)
+				{
+						printf("\033[0;31m");
+						printf("%d!", next_prime);
+				}
+				else if (start == end - 1)
+				{
+						printf("%d.", end);
+				}
+				else 
+				{
+						printf("\033[0;37m");
+						printf("_.");
+				}
+				start++;
 		}
-		else if (start == next_prime)
-		{
-			printf("%d*", next_prime);
-		}
-		else if (start == end - 1)
-		{
-			printf("%d.", end);
-		}
-		else 
-		{
-			printf("_.");
-		}
-		start++;
-	}
-	printf("\n\n\n");
+		printf("\n\n\n");
 
 }
 
 int		main(int argc, char **argv)
 {
-	int	start;
+		int	start;
 
-	/* k = -8; */
-	start = 20;
-	int end = 50;
-	/* i = 0; */
-	while (start < end)
-	{
-		visualize_next_prime(start, 0, end);
+		/* k = -8; */
+		start = 0;
+		int end = 30;
+		/* i = 0; */
+		while (start < end)
+		{
+				visualize_next_prime(start, 0, end);
+				/* printf("number to check = %d \t", k); */
+				/* printf("next prime of '%d' = '%d' \t\n", k, ft_find_next_prime(k)); */
+				/* printf("-------------------------------------------------------\n"); */
+				start++;
+		}
+
+
+		/* int	k; */
+
+		/* k = (int)argv[1]; */
+		/* k = 25; */
+
 		/* printf("number to check = %d \t", k); */
 		/* printf("next prime of '%d' = '%d' \t\n", k, ft_find_next_prime(k)); */
-		/* printf("-------------------------------------------------------\n"); */
-		start++;
-	}
 
-
-	/* int	k; */
-
-	/* k = (int)argv[1]; */
-	/* k = 25; */
-
-	/* printf("number to check = %d \t", k); */
-	/* printf("next prime of '%d' = '%d' \t\n", k, ft_find_next_prime(k)); */
-
-	return (0);
+		return (0);
 }
