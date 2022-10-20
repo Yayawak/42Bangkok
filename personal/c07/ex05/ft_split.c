@@ -4,97 +4,98 @@
 
 bool	is_char_in_string(char c, char *set)
 {
-				while (true)
-				{
-								if (*set == '\0')
-												return (c == '\0');
-								if (*set == c)
-												return (true);
-								set++;
-				}
-				return (false);
+	while (true)
+	{
+		if (*set == '\0')
+			return (c == '\0');
+		if (*set == c)
+			return (true);
+		set++;
+	}
+	return (false);
 }
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-				unsigned int	index;
+	unsigned int	index;
 
-				index = 0;
-				while (index < n && src[index] != '\0')
-				{
-								dest[index] = src[index];
-								index++;
-				}
-				while (index < n)
-				{
-								dest[index] = '\0';
-								index++;
-				}
-				return (dest);
+	index = 0;
+	while (index < n && src[index] != '\0')
+	{
+		dest[index] = src[index];
+		index++;
+	}
+	while (index < n)
+	{
+		dest[index] = '\0';
+		index++;
+	}
+	return (dest);
 }
 
+// "vim,rc"    ,
 int	count_occur(char *str, char *charset)
 {
-				int	count;
-				char	*prev;
-				char	*next;
+	int		count;
+	char	*prev;
+	char	*next;
 
-				count = 0;
-				prev = str;
-				next = str;
-				while (true)
-				{
-								if (is_char_in_string(*str, charset))
-												next = str;
-								if (next - prev > 1)
-												count++;
-								if (*str == '\0')
-												break;
-								prev = next;
-								str++;
-				}
-				return (count);
+	count = 0;
+	prev = str;
+	next = str;
+	while (true)
+	{
+		if (is_char_in_string(*str, charset))
+			next = str;
+		if (next - prev >= 1)
+			count++;
+		if (*str == '\0')
+			break;
+		prev = next;
+		str++;
+	}
+	return (count);
 }
 
 int	add_part(char **strs_arr, char *prev, int size, char *charset)
 {
-				if (is_char_in_string(prev[0], charset))
-				{
-								prev++;
-								size--;
-				}
-				*strs_arr = (char *)malloc((size + 3) * sizeof(char));
-				// appened string to big-string
-				ft_strncpy(*strs_arr, prev, size);
-				(*strs_arr)[size] = '\0';
-				(*strs_arr)[size + 1] = '\0';
-				return (1);
+	if (is_char_in_string(prev[0], charset))
+	{
+		prev++;
+		size--;
+	}
+	*strs_arr = (char *)malloc((size + 3) * sizeof(char));
+	// appened string to big-string
+	ft_strncpy(*strs_arr, prev, size);
+	(*strs_arr)[size] = '\0';
+	(*strs_arr)[size + 1] = '\0';
+	return (1);
 }
 
 // charset is seperator
 char	**ft_split(char *str, char *charset)
 {
-				int	size;
-				int	index;
-				char	*prev_str;
-				char	*next_str;
-				char	**strs_arr;
+	int		size;
+	int		index;
+	char	*prev_str;
+	char	*next_str;
+	char	**strs_arr;
 
-				strs_arr = (char **)malloc(sizeof(char *) * count_occur(str, charset) + 1);
-				index = 0;
-				prev_str = str;
-				next_str = str;
-				while (true)
-				{
-								if (is_char_in_string(*str, charset))
-												next_str = str;
-								if ((size = next_str - prev_str) > 1)
-												index += add_part(&strs_arr[index], prev_str, size, charset);
-								if (*str == '\0')
-												break;
-								prev_str = next_str;
-								str++;
-				}
-				strs_arr[index] = 0;
-				return (strs_arr);
+	strs_arr = (char **)malloc(sizeof(char *) * count_occur(str, charset) + 1);
+	index = 0;
+	prev_str = str;
+	next_str = str;
+	while (true)
+	{
+		if (is_char_in_string(*str, charset))
+			next_str = str;
+		if ((size = next_str - prev_str) > 1)
+			index += add_part(&strs_arr[index], prev_str, size, charset);
+		if (*str == '\0')
+			break;
+		prev_str = next_str;
+		str++;
+	}
+	strs_arr[index] = 0;
+	return (strs_arr);
 }
