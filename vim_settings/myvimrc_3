@@ -1,0 +1,117 @@
+colorscheme delek
+colorscheme peachpuff
+colorscheme zellner
+colorscheme morning
+
+colorscheme darkblue
+colorscheme elflord
+colorscheme industry
+colorscheme koehler
+colorscheme murphy
+colorscheme ron
+colorscheme torte
+" colorscheme farout
+" colorscheme gruvbox
+" colorscheme jellybeans
+" colorscheme orbital
+
+" set t_Co=256   " This is may or may not needed.
+" set background=light
+" set background=dark
+" colorscheme PaperColor
+
+" set termguicolors
+" set background=dark
+" colorscheme colibri
+
+" let darkthemes = ['gruvbox', 'farout', 'darkblue', 'elflord', 'industry', 'koehler', 'murphy', 'ron', 'slate', 'blue', 'fahrenheit']
+" let whitethemes = ['delek', 'morning', 'peachpuff', 'zellner']
+"let all_themes = ['darkblue', 'elflord', 'industry', 'koehler', 'murphy', 'ron', 'slate', 'delek', 'morning', 'peachpuff', 'zellner']
+" execute 'colorscheme' darkthemes[rand() % len(darkthemes)-1]
+" execute 'colorscheme' all_themes[rand() % len(all_themes)-1]
+
+"bug : can not random themes
+let g:random_diabled = 0 "disable random themes plugin
+let g:random_scheme = 1
+"let g:ariline_integration = 1
+let g:airline_theme='molokai'
+
+
+execute pathogen#infect()
+
+call plug#begin()
+"Plug 'Sammyalhashe/random_colorscheme.vim'
+Plug 'archseer/colibri.vim'
+Plug 'fcpg/vim-orbital'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
+Plug 'fcpg/vim-farout'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'dense-analysis/ale'
+Plug 'preservim/nerdtree'
+Plug 'gilgigilgil/anderson.vim'
+
+
+
+
+call plug#end()
+
+" Vundle Plugins
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'scrooloose/syntastic' "syntax error checker
+Plugin 'jiangmiao/auto-pairs' "auto pair paratheses
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+set ts=2
+set clipboard=unnamed
+autocmd BufWritePre * :%s/\s+$//e "remove trailing whitespace onsave
+set nu
+set rnu
+syntax on
+filetype indent plugin on
+autocmd VimLeave * :!crc
+autocmd VimLeave * :crc
+autocmd BufWritePre *.c :normal gg=G
+
+" autocmd VimLeave * !crc
+" autocmd BufWritePost * !crc
+" autocmd BufWritePost . !cmp_run_c
+" autocmd BufWritePost . !pwd
+
+" set ruler
+" set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
+set cmdheight=2 " use a status bar that is towo rows high
+
+
+"
+" echo split(globpath(&rtp,"**/colors/*.vim"),"\n")
+function RandomColorScheme()
+
+let mycolors = split(globpath(&rtp,"**/colors/*.vim"),"\n")
+exe 'so ' . mycolors[localtime() % len(mycolors)]
+unlet mycolors
+endfunction
+call RandomColorScheme()
+:command NewColor call RandomColorScheme()
+"
+"autocmd BufWriteLeave * 
+"autocmd BufWritePost * !gcc && ./a.out
+" autocmd BufWriteEnter * :normal gg=G
+" colorscheme alduin
+" colorscheme anderson
+call RandomColorScheme()
+
+autocmd VimEnter * if @% == 'vimrc' | echo 'hello' | else | echo 'world' | endif

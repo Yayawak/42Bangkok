@@ -5,6 +5,7 @@
 int		main()
 {
 	int	i;
+	/* unsigned long long i; */
 
 	i = -5;
 	while (i < 20)

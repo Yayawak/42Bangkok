@@ -4,7 +4,8 @@
 
 int		main()
 {
-	int k = 4;
+	/* int k = 4; */
+	int k = -4;
 	printf("input : %d\n", k);
 	printf("output : %d\n", ft_iterative_factorial(k));
 

@@ -1,44 +1,37 @@
-#include <stdio.h>
-
 int	ft_sqrt(int nb)
 {
 		int	i;
 
-		i = 0;
-		while (i < nb)
-		{
-				if ((i * i) == nb)
-				{
-						return (i);
-				}
+		if (nb < 1)
+				return (0);
+		i = 1;
+		while ((i * i) < nb)
 				i++;
-		}
-		return (0);
+		return ((i * i == nb) ? i : 0);
 }
 
-// 25 ? bug 
-int	ft_is_prime(int nb)
+// n = -36
+int	ft_is_prime(int n)
 {
 		int	i;
-
-		i = 5;
-		if (nb < 0)
-				return ft_is_prime(nb * (-1));
-		if ((nb == 0) || (nb == 1))
+		if (n < 0)
+				return (ft_is_prime((-1) * n));
+		if (n <= 1)
 				return (0);
-		if (nb == 2 || nb == 3)
+		if (n == 2 || n == 3)
 				return (1);
-		if (((nb % 2) == 0) || ((nb % 3) == 0))
+		if ((n % 2) == 0 || (n % 3) == 0)
 				return (0);
-		// 3 < 25
-		while (i <= ft_sqrt(nb))
+		i = 5;
+		while ((i * i) < ft_sqrt(n))
+		/* while ((i * i) <= n) */
 		{
-				if (((nb % i) == 0) || (nb % (i + 2)) == 0)
+				/* if ((n % i) == 0 || (n % (i + 2)) == 0) */
+				if ((n % i) == 0 || (n % (i + 2)) == 0)
 						return (0);
 				i += 6;
 		}
 		return (1);
-		/* return (-1); */
 }
 
 int	ft_find_next_prime(int nb)

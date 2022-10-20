@@ -4,7 +4,9 @@
 
 int		main()
 {
-	int k = 8;
+	/* int k = 0; */
+	/* int k = -5; */
+	int k = 5;
 	printf("input : %d\n", k);
 	printf("output : %d\n", ft_recursive_factorial(k));
 
