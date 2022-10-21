@@ -28,8 +28,6 @@ int	ft_is_prime(int n)
 {
 	int	i;
 
-	if (n < 0)
-		return (ft_is_prime((-1) * n));
 	if (n <= 1)
 		return (0);
 	if (n == 2 || n == 3)

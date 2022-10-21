@@ -28,8 +28,6 @@ int	ft_is_prime(int n)
 {
 	int	i;
 
-	if (n < 0)
-		return (ft_is_prime((-1) * n));
 	if (n <= 1)
 		return (0);
 	if (n == 2 || n == 3)
@@ -48,7 +46,12 @@ int	ft_is_prime(int n)
 
 int	ft_find_next_prime(int nb)
 {
-	if (ft_is_prime(nb) == 1)
-		return (nb);
-	return (ft_find_next_prime(nb + 1));
+	if (nb == 2147483647)
+		return (2147483647);
+	if (nb <= 2)
+		return (2);
+	nb++;
+	while (!ft_is_prime(nb))
+		nb++;
+	return (nb);
 }

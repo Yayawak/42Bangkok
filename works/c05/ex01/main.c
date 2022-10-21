@@ -9,7 +9,6 @@
 /*   Updated: 2022/10/20 16:59:31 by athawebo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 /*
 #include <stdio.h>
 #include <string.h>
@@ -19,7 +18,7 @@ int		main()
 {
 	// int k = 0;
 	//int k = -5;
-	int k = 5;
+	int k = -1;
 	printf("input : %d\n", k);
 	printf("output : %d\n", ft_recursive_factorial(k));
 

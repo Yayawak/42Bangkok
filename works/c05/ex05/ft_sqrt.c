@@ -12,14 +12,20 @@
 
 int	ft_sqrt(int nb)
 {
-	int	i;
+	int	to_find;
 
-	if (nb < 1)
+	if (nb <= 0 || nb > 2147395600)
+	{
 		return (0);
-	i = 1;
-	while ((i * i) < nb)
-		i++;
-	if ((i * i) == nb)
-		return (i);
+	}
+	to_find = 1;
+	while (to_find <= 46340)
+	{
+		if (to_find * to_find > nb)
+			break ;
+		if (to_find * to_find == nb)
+			return (to_find);
+		to_find ++;
+	}
 	return (0);
 }

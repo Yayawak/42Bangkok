@@ -1,88 +1,164 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: athawebo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/20 15:13:04 by athawebo          #+#    #+#             */
+/*   Updated: 2022/10/21 15:19:04 by athawebo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <unistd.h>
-#include <stdio.h>
 
-void ft_putc(char c) {
-	write(1, &c, 1); 
-}
+void	ft_putchar_rec(int nbr, int base, char *base_str, int carry);
+void	ft_putnbr_base(int nbr, char *base);
+int		ft_strlen(char *str);
+int		ft_is_base_valid(char *str);
 
-unsigned int	ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	unsigned int	len;
+		int	i;
 
-	len = 0;
-	while (str[len] != '\0')
-	{
-		len++;
-	}
-	return (len);
-}
-
-
-int	ft_validate_base(char *base, int base_len)
-{
-	int	i;
-	int	k;
-
-	i = 0;
-	if (base_len <= 1)
-		return (0);
-	while (base[i] != '\0')
-	{
-		if ((base[i] < ' ') || (base[i] > '~') 
-				|| 
-				(base[i] == '+') || (base[i] == '-')
-		   )
-			return (0);
-		k = i + 1;
-		while (k < base_len)
-		{
-			if (base[i] == base[k])
+		if (!str)
 				return (0);
-			k++;
+		i = 0;
+		while (*str != 0)
+		{
+				str ++;
+				i ++;
 		}
-		i++;
-	}
-	return (1);
+		return (i);
 }
 
-void	ft_putbase(long nbr, char *base, int base_len)
+int	ft_is_base_valid(char *str)
 {
-	long	max;
+		char	is_seen[256];
+		int		is_seen_index;
+		int		index;
 
-	max = 2147483648;
-	if (nbr == (-1) * max)
-	{
-		ft_putc('-');
-		ft_putbase(max, base, base_len);
-	}
-	else if (nbr < 0)
-	{
-		ft_putc('-');
-		ft_putbase((-1) * nbr, base, base_len);
-	}
-	else if (nbr > base_len)
-	{
-		ft_putbase(nbr / base_len, base, base_len);
-		ft_putc(base[nbr % base_len]);
-	}
-	else
-	{
-		ft_putc(base[nbr % base_len]);
-	}
+		is_seen[0] = '\0';
+		index = 0;
+		while (*str != 0)
+		{
+				if (*str == '-' || *str == '+')
+						return (0);
+				is_seen_index = 0;
+				while (is_seen[is_seen_index] != 0)
+				{
+						if (is_seen[is_seen_index] == *str)
+								return (0);
+						is_seen_index ++;
+				}
+				is_seen[index] = *str;
+				is_seen[++index] = '\0';
+				str ++;
+		}
+		return (1);
 }
 
-void ft_putnbr_base(int nbr, char *base) 
+void	ft_putnbr_base(int nbr, char *base)
 {
-	int	base_len;
-	int	is_valid;
+		char	c;
+		int		base_len;
+		int		carry;
 
-	if (base == 0)
-		return ;
-	base_len = ft_strlen(base);
-	is_valid = ft_validate_base(base, base_len);
-	printf("%s\nIs valid ? %d\n", base, is_valid);
-
-	if (is_valid)
-		ft_putbase(nbr, base, base_len);
+		base_len = ft_strlen(base);
+		if (base_len <= 1 || !ft_is_base_valid(base))
+		{
+				return ;
+		}
+		carry = 0;
+		if (nbr == 0)
+		{
+				c = base[0];
+				write(1, &c, 1);
+		}
+		if (nbr < 0)
+		{
+				carry = 1;
+				nbr ++;
+				nbr *= -1;
+				c = '-';
+				write(1, &c, 1);
+		}
+		ft_putchar_rec(nbr, base_len, base, carry);
 }
 
+void	ft_putchar_rec(int nbr, int base, char *base_str, int carry)
+{
+		char			c;
+		unsigned int	number;
+
+		number = nbr;
+		if (nbr > 0)
+		{
+				c = base_str[(number + carry) % base];
+				ft_putchar_rec((number + carry) / base, base, base_str, 0);
+				write(1, &c, 1);
+		}
+}
+
+int	len(char *str)
+{
+		int	i;
+		i = 0;
+		while (str[i] != 0)
+				i++;
+		return (i);
+}
+void	printstr(char *str)
+{
+		write(1, str, len(str));
+}
+int	main(void)
+{
+		printstr("Expect result :-2147483648\n"); 
+		printstr("User   result :");
+		ft_putnbr_base(-2147483648,"0123456789");
+		printstr("\nExpect result :\n"); 
+		printstr("User   result :");
+		ft_putnbr_base(123,"01+3456789");
+		ft_putnbr_base(123,"01234-6789");
+		ft_putnbr_base(123,"0");
+		ft_putnbr_base(-123,"012+456789");
+		ft_putnbr_base(-123,"0123-56789");
+		ft_putnbr_base(123,"0123436789");
+		ft_putnbr_base(-123,"0023456789");
+		ft_putnbr_base(-123,"0123456780");
+		printstr("\nExpect result :-7852516351\n"); 
+		printstr("User   result :");
+		ft_putnbr_base(-2147483648,"9876543210");
+		printstr("\nExpect result :-20000000000\n"); 
+		printstr("User   result :");
+		ft_putnbr_base(-2147483648,"01234567");
+		printstr("\nExpect result :-80000000\n"); 
+		printstr("User   result :");
+		ft_putnbr_base(-2147483648,"0123456789aBcDeF");
+		printstr("\nExpect result :-12aBcDeF\n"); 
+		printstr("User   result :");
+		ft_putnbr_base(-0x12ABCDEF,"0123456789aBcDeF");
+		printstr("\nExpect result :-1010101101010100101010110101010\n"); 
+		printstr("User   result :");
+		ft_putnbr_base(-0x55AA55AA,"01");
+		printstr("\nExpect result :17777777777\n"); 
+		printstr("User   result :");
+		ft_putnbr_base(2147483647,"01234567");
+		printstr("\nExpect result :7852516352\n"); 
+		printstr("User   result :");
+		ft_putnbr_base(2147483647,"9876543210");
+		printstr("\nExpect result :12340\n"); 
+		printstr("User   result :");
+		ft_putnbr_base(625+25*5*2+25*3+5*4,"01234");
+		printstr("\nExpect result :bhhhhhhhhhh\n"); 
+		printstr("User   result :");
+		ft_putnbr_base(2147483647,"abcdefgh");
+		printstr("\nExpect result :7fffffff\n"); 
+		printstr("User   result :");
+		ft_putnbr_base(2147483647,"0123456789AbCdEf");
+		printstr("\nExpect result :1111111111111111111111111111111\n"); 
+		printstr("User   result :");
+		ft_putnbr_base(2147483647,"01");
+		printstr("\n");
+		return (0);
+}
