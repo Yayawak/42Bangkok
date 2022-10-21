@@ -19,13 +19,13 @@ void	ft_putstr(char *str)
 		write(1, str, 1);
 		str++;
 	}
+	write(1, "\n", 1);
+
 }
 
 int	main(int argc, char **argv)
 {
-	if (argc >= 1)
-	{
-		ft_putstr(argv[0]);
-	}
+	argc++;
+	ft_putstr(*argv);
 	return (0);
 }
