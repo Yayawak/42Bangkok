@@ -3,7 +3,9 @@
 
 | project | progress | score |
 | --- | --- | --- |
-| shell00 | ![img](https://e7.pngegg.com/pngimages/733/303/png-clipart-check-check-mark-computer-icons-x-mark-check-mark-icon-green-miscellaneous-angle-thumbnail.png) | 50/100 | 
+| shell00 | 
+:heavy_check_mark:
+| 50/100 | 
 |shell01 | ? | ?/100 |
 | c00 | p | 70/100 |
 | c01 | p | 92/100 |
