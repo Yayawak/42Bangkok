@@ -10,9 +10,9 @@
 | c02 | ✅ | 55/100 | strings 🧵 |
 | c03 | ✅ | 50/100 | strings++ |
 | c04 | ❌ 😈| ?/100 | str + atoi |
-| c05 | 𝔛 😈| ?/100 | recursion ∞ |
-| c06 | 𝔛 😈| ?/100 | terminal arguments 📟 |
-| c07 | 𝔛 😈 | ?/100 | base_n + strsplit |
+| c05 | X  😈| ?/100 | recursion ∞ |
+| c06 | 𝔛  😈| ?/100 | terminal arguments 📟 |
+| c07 | 𝔛  | ?/100 | base_n + strsplit |
 | c08 | 𝔛 | ?/100 | headers 🎓 |
 | c09 | 𝔛 | ?/100 | Make library 📚 |
 | c10 | 𝔛 | ?/100 | display cat tail |
