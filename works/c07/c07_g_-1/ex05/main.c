@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: athawebo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/21 14:05:54 by athawebo          #+#    #+#             */
+/*   Updated: 2022/10/21 14:06:13 by athawebo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+/*
 #include <stdio.h>
 #include <string.h>
 #include "ft_split.c"
@@ -7,7 +19,7 @@ int	main(int argc, char **argv)
 				int	index;
 				char	**splited;
 
-				/* argc = argc + 0; */
+				// argc = argc + 0;
 				argc = 3;
 				argv[1] = "index, fname, lname, nickname, salary, bacholer";
 				argv[2] = ", ";
@@ -24,3 +36,5 @@ int	main(int argc, char **argv)
 				printf("Tab end\n");
 				return (0);
 }
+
+*/

@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athawebo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 19:06:52 by athawebo          #+#    #+#             */
-/*   Updated: 2022/10/21 13:15:34 by athawebo         ###   ########.fr       */
+/*   Created: 2022/10/21 15:37:22 by athawebo          #+#    #+#             */
+/*   Updated: 2022/10/21 15:57:05 by athawebo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-int	ft_strlen(char *p_str)
-{
-	int	len;
+# include <unistd.h>
 
-	len = 0;
-	while (p_str[len])
-		len++;
-	return (len);
-}
+# define TRUE 1
+# define FALSE 0
+# define EVEN(n) ((n % 2) == 0)
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
+# define SUCCESS 0
 
-char	*ft_strdup(char *src)
-{
-	int		index;
-	char	*p_dest;
+typedef int	t_bool;
 
-	index = 0;
-	p_dest = (char *)malloc(ft_strlen(src) * sizeof(char) + 1);
-	if (p_dest == NULL)
-		return (0);
-	while (src[index])
-	{
-		p_dest[index] = src[index];
-		index++;
-	}
-	p_dest[index] = '\0';
-	return (p_dest);
-}
+void	ft_putstr(char *str);
+t_bool	ft_is_even(int nbr);
+
+#endif

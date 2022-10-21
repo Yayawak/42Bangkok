@@ -1,41 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athawebo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 19:06:52 by athawebo          #+#    #+#             */
-/*   Updated: 2022/10/21 13:15:34 by athawebo         ###   ########.fr       */
+/*   Created: 2022/10/20 17:43:57 by athawebo          #+#    #+#             */
+/*   Updated: 2022/10/20 17:45:21 by athawebo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	ft_strlen(char *p_str)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	len;
-
-	len = 0;
-	while (p_str[len])
-		len++;
-	return (len);
-}
-
-char	*ft_strdup(char *src)
-{
-	int		index;
-	char	*p_dest;
-
-	index = 0;
-	p_dest = (char *)malloc(ft_strlen(src) * sizeof(char) + 1);
-	if (p_dest == NULL)
-		return (0);
-	while (src[index])
+	while (*s1 != '\0' && *s2 != '\0')
 	{
-		p_dest[index] = src[index];
-		index++;
+		s1++;
+		s2++;
 	}
-	p_dest[index] = '\0';
-	return (p_dest);
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }

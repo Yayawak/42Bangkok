@@ -6,7 +6,7 @@
 /*   By: athawebo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:11:11 by athawebo          #+#    #+#             */
-/*   Updated: 2022/10/20 19:12:58 by athawebo         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:16:39 by athawebo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -32,10 +32,10 @@ int	main(void)
 
 		// char	source[] = "GeeksForGeeks";
 
-		/* char	*target = strdup(source); */
-		/* printf("Pointer of %s is %p\n", target, target); */
-		/* printf("%s\n", target); */
-		/* printf("Strin dup of %s is %s", source, ft_strdup(source)); */
+		// char	*target = strdup(source);
+		// printf("Pointer of %s is %p\n", target, target);
+		// printf("%s\n", target
+		// printf("Strin dup of %s is %s", source, ft_strdup(source));
 
 		
 		return (0);

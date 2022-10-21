@@ -1,7 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: athawebo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/21 14:06:49 by athawebo          #+#    #+#             */
+/*   Updated: 2022/10/21 14:06:53 by athawebo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+/*
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "ft_ultimate_range.c"
+
 
 void	print_int_arr(int numbers[], int size)
 {
@@ -34,7 +48,8 @@ int	main(void)
 				printf("Min = %d\nMax = %d\n\t -> (size = %d)",
 												min, max, size);
 				fflush(stdout);
-				/* print_int_arr(range, size + 2); */
+				// print_int_arr(range, size + 2);
 				print_int_arr(range, size);
 				return (0);
 }
+*/
