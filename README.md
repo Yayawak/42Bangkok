@@ -10,12 +10,12 @@
 | c02 | ✅ | 55/100 | strings 🧵 |
 | c03 | ✅ | 50/100 | strings++ |
 | c04 | ❌ | ?/100 | str + atoi |
-| c05 | 🏀 | ?/100 | recursion ∞ |
-| c06 |  🪂 | ?/100 | terminal arguments 📟 |
-| c07 | . | ?/100 | base_n + strsplit |
-| c08 | . | ?/100 | headers 🎓 |
-| c09 | . | ?/100 | Make library 📚 |
-| c10 | . | ?/100 | display cat tail |
-| c11 | . | ?/100 | deep array |
-| c12 | . | ?/100 | linked list 🔗 |
-| c13 | . | ?/100 | binary tree 🌴 |
+| c05 | 𝔛 | ?/100 | recursion ∞ |
+| c06 | 𝔛 | ?/100 | terminal arguments 📟 |
+| c07 | 𝔛 | ?/100 | base_n + strsplit |
+| c08 | 𝔛 | ?/100 | headers 🎓 |
+| c09 | 𝔛 | ?/100 | Make library 📚 |
+| c10 | 𝔛 | ?/100 | display cat tail |
+| c11 | 𝔛 | ?/100 | deep array |
+| c12 | 𝔛 | ?/100 | linked list 🔗 |
+| c13 | 𝔛 | ?/100 | binary tree 🌴 |
