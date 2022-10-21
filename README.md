@@ -9,7 +9,7 @@
 | c01 | p | 92/100 |
 | c02 | p | 55/100 |
 | c03 | p | 50/100 |
-| c04 | x | ?/100 |
+| c04 | <g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji> | ?/100 |
 | c05 | ? | ? |
 
 
