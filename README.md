@@ -1,6 +1,5 @@
 # 42Bangkok
-<img width="40%" alt="image" src="https://user-images.githubusercontent.com/61963667/197270663-aa1f8187-964a-4acb-b05d-98f98ae0d745.png">
-
+### ไปนอนบ้างนะ
 | project | progress | score | about | 
 | --- | --- | --- | --- |
 | shell00 | ✅ | 50/100 | 🦀 |
@@ -19,3 +18,5 @@
 | c11 | 𝔛 | ?/100 | deep array |
 | c12 | 𝔛 | ?/100 | linked list 🔗 |
 | c13 | 𝔛 | ?/100 | binary tree 🌴 |
+
+<img width="50%" alt="image" src="https://user-images.githubusercontent.com/61963667/197270663-aa1f8187-964a-4acb-b05d-98f98ae0d745.png">
