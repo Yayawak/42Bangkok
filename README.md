@@ -3,15 +3,13 @@
 
 | project | progress | score |
 | --- | --- | --- |
-| shell00 | 
-:heavy_check_mark:
-| 50/100 | 
+| shell00 | ✅ | 50/100 | 
 |shell01 | ? | ?/100 |
-| c00 | p | 70/100 |
-| c01 | p | 92/100 |
-| c02 | p | 55/100 |
-| c03 | p | 50/100 |
-| c04 | <g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji> | ?/100 |
+| c00 | ✅ | 70/100 |
+| c01 | ✅ | 92/100 |
+| c02 | ✅ | 55/100 |
+| c03 | ✅ | 50/100 |
+| c04 | ❌ | ?/100 |
 | c05 | ? | ? |
 
 
