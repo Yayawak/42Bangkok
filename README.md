@@ -1,5 +1,6 @@
 # 42Bangkok
 ### ไปนอนบ้างนะ
+😈 = เดี๋ยวส่งทีเดียวผ่าน
 | project | progress | score | about | 
 | --- | --- | --- | --- |
 | shell00 | ✅ | 50/100 | 🦀 |
@@ -8,10 +9,10 @@
 | c01 | ✅ | 92/100 | aritmetic 🔢 |
 | c02 | ✅ | 55/100 | strings 🧵 |
 | c03 | ✅ | 50/100 | strings++ |
-| c04 | ❌ | ?/100 | str + atoi |
-| c05 | 𝔛 | ?/100 | recursion ∞ |
-| c06 | 𝔛 | ?/100 | terminal arguments 📟 |
-| c07 | 𝔛 | ?/100 | base_n + strsplit |
+| c04 | ❌ 😈| ?/100 | str + atoi |
+| c05 | 𝔛 😈| ?/100 | recursion ∞ |
+| c06 | 𝔛 😈| ?/100 | terminal arguments 📟 |
+| c07 | 𝔛 😈 | ?/100 | base_n + strsplit |
 | c08 | 𝔛 | ?/100 | headers 🎓 |
 | c09 | 𝔛 | ?/100 | Make library 📚 |
 | c10 | 𝔛 | ?/100 | display cat tail |
