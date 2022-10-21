@@ -12,3 +12,10 @@
 | c04 | ❌ | ?/100 | str + atoi |
 | c05 | 🏀 | ?/100 | recursion ∞ |
 | c06 |  🪂 | ?/100 | terminal arguments 📟 |
+| c07 | . | ?/100 | base_n + strsplit |
+| c08 | . | ?/100 | headers 🎓 |
+| c09 | . | ?/100 | Make library 📚 |
+| c10 | . | ?/100 | display cat tail |
+| c11 | . | ?/100 | deep array |
+| c12 | . | ?/100 | linked list 🔗 |
+| c13 | . | ?/100 | binary tree 🌴 |
