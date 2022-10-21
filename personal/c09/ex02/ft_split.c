@@ -1,100 +1,101 @@
-#include <stdlib.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-bool	is_char_in_string(char c, char *charset)
+bool	is_char_in_string(char c, char *set)
 {
-		while (*charset)
-		{
-				if (c == *charset)
-						return (true);
-				
-				charset++;
-		}
-		return (false);
-
-}
-
-int		count_occur(char *str, char *charset)
-{
-		int		count;
-		int		idx;
-		char	*prev;
-		char	*next;
-
-		count = 0;
-		prev = str;
-		next = str;
-		idx = 0;
-		while (true)
-		{
-				if (is_char_in_string(str[idx], charset))
-						next = str;
-				if ((next - prev) > 1)
-						count++;
-				if (str[idx] == '\0')
-						break;
-				prev = next;
-				str++;
-		}
-		return (count);
+				while (true)
+				{
+								if (*set == '\0')
+												return (c == '\0');
+								if (*set == c)
+												return (true);
+								set++;
+				}
+				return (false);
 }
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int	index;
+				unsigned int	index;
 
-	index = 0;
-	while (index < n && src[index] != '\0')
-	{
-		dest[index] = src[index];
-		index++;
-	}
-	while (index < n)
-	{
-		dest[index] = '\0';
-		index++;
-	}
-	return (dest);
+				index = 0;
+				while (index < n && src[index] != '\0')
+				{
+								dest[index] = src[index];
+								index++;
+				}
+				while (index < n)
+				{
+								dest[index] = '\0';
+								index++;
+				}
+				return (dest);
 }
-/* int		shift_idx_to_next_word(char	**arr_strs, int p_idx, int size, char *charset) */
-int		shift_idx_to_next_word(char	**arr_strs, char *prev_w, int word_size, char *charset)
+
+// "vim,rc"    ,
+int	count_occur(char *str, char *charset)
 {
-		if (is_char_in_string(prev_w[0], charset))
-		{
-				prev_w++;
-				word_size--;
-		}
-		*arr_strs = (char *)malloc((word_size + 3) * sizeof(char));
-		ft_strncpy(*arr_strs, prev_w, word_size);
-		(*arr_strs)[word_size] = '\0';
-		(*arr_strs)[word_size + 1] = '\0';
-		return (1);
+				int		count;
+				char	*prev;
+				char	*next;
+
+				count = 0;
+				prev = str;
+				next = str;
+				while (true)
+				{
+								if (is_char_in_string(*str, charset))
+												next = str;
+								if (next - prev >= 1)
+												count++;
+								if (*str == '\0')
+												break;
+								prev = next;
+								str++;
+				}
+				return (count);
 }
 
+int	add_part(char **strs_arr, char *prev, int size, char *charset)
+{
+				if (is_char_in_string(prev[0], charset))
+				{
+								prev++;
+								size--;
+				}
+				*strs_arr = (char *)malloc((size + 3) * sizeof(char));
+				// appened string to big-string
+				ft_strncpy(*strs_arr, prev, size);
+				(*strs_arr)[size] = '\0';
+				(*strs_arr)[size + 1] = '\0';
+				return (1);
+}
+
+// charset is seperator
 char	**ft_split(char *str, char *charset)
 {
-	char	**arr_strs;
-	int		cur_word_size;
-	int		p_idx;
-	int		n_idx;
+				int		size;
+				int		index;
+				char	*prev_str;
+				char	*next_str;
+				char	**strs_arr;
 
-	arr_strs = (char **)malloc(sizeof(char *) * count_occur(str, charset) + 1);
-	p_idx = 0;
-	n_idx = 0;
-	while (true)
-	{
-			if (is_char_in_string(*str, charset))
-					/* next_word = str[index]; */
-					n_idx = p_idx;
-			cur_word_size = p_idx - n_idx;
-			if (cur_word_size >= 1)
-					n_idx += shift_idx_to_next_word(&arr_strs[n_idx], &str[p_idx], cur_word_size, charset);
-			if (str[n_idx] == '\0')
-					break ;
-			p_idx = n_idx;
-			n_idx++;
-	}
-	arr_strs[n_idx] = 0;
-	return (arr_strs);
+				strs_arr = (char **)malloc(sizeof(char *) * count_occur(str, charset) + 1);
+				index = 0;
+				prev_str = str;
+				next_str = str;
+				while (true)
+				{
+								if (is_char_in_string(*str, charset))
+												next_str = str;
+								if ((size = next_str - prev_str) > 1)
+												index += add_part(&strs_arr[index], prev_str, size, charset);
+								if (*str == '\0')
+												break;
+								prev_str = next_str;
+								str++;
+				}
+				strs_arr[index] = 0;
+				return (strs_arr);
 }
