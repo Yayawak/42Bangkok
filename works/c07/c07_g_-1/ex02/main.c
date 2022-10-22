@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 /*
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -19,37 +18,46 @@
 
 void	print_int_arr(int numbers[], int size)
 {
-				int index;
+		int index;
 
-				printf("[ ");
-				index = 0;
-				while (index < size)
+		printf("[ ");
+		index = 0;
+		while (index < size)
+		{
+				printf("%d", numbers[index]);
+				if (index != size - 1)
 				{
-								printf("%d", numbers[index]);
-								if (index != size - 1)
-								{
-												printf(", ");
-								}
-								index++;
+						printf(", ");
 				}
-				printf(" ]");
+				index++;
+		}
+		printf(" ]");
 }
 int	main(void)
 {
-				int	min;
-				int	max;
-				int	*range;
-				int size;
+		int	min;
+		int	max;
+		int	*range;
+		int size;
 
-				min = 5;
-				max = 20;
-				size = ft_ultimate_range(&range, min, max);
+		min = 5;
+		max = 20;
+		size = ft_ultimate_range(&range, min, max);
 
-				printf("Min = %d\nMax = %d\n\t -> (size = %d)",
-												min, max, size);
-				fflush(stdout);
-				// print_int_arr(range, size + 2);
-				print_int_arr(range, size);
-				return (0);
+		printf("Min = %d\nMax = %d\n\t -> (size = %d)",
+						min, max, size);
+		// fflush(stdout);
+		// print_int_arr(range, size + 2);
+		print_int_arr(range, size);
+		print_int_arr(range, 20);
+		// return (0);
+
+		int	*list;
+		ft_ultimate_range(&list, 5 ,10);
+		for (int i = 0; i < 5; i++)
+				printf("%d, ", list[i]);
+		printf("\n");
+		free(list);
+		return (0);
 }
 */

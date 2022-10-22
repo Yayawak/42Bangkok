@@ -14,21 +14,14 @@
 
 int	*ft_range(int min, int max)
 {
-	int	range;
-	int	index;
-	int	*buffer;
+	int	*to_return;
+	int	*arr;
 
 	if (min >= max)
 		return (0);
-	range = max - min - 1;
-	buffer = malloc(range * sizeof(int));
-	if (buffer == NULL)
-		return (0);
-	index = 0;
-	while (index <= range)
-	{
-		buffer[index] = min + index;
-		index++;
-	}
-	return (buffer);
+	arr = malloc(sizeof(int) * (max - min));
+	to_return = arr;
+	while (min < max)
+		*arr++ = min++;
+	return (to_return);
 }

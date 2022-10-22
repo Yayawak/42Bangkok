@@ -23,12 +23,14 @@ int	main(void)
 	char	*result;
 	int	strs_size;
 
-	strs_size = 5;
+	strs_size = 7;
 	strs = (char**)malloc(strs_size * sizeof(strs));
 	strs[0] = "Nion cat";
 	strs[1] = "pixel work";
 	strs[2] = "Jetpack j";
 	strs[3] = "Terraria";
+	strs[4] = "Kingdom rush";
+	strs[5] = "Binomial";
 	seperator = ",";
 	index = 0;
 	while (index < strs_size)

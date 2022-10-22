@@ -14,28 +14,24 @@
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
-	int	inter_range;
 	int	index;
 	int	*buffer;
-
+	
+	if (range == 0)
+			return (-1);
 	if (min >= max)
 	{
 		*range = 0;
 		return (0);
 	}
-	inter_range = max - min - 1;
-	buffer = malloc(inter_range * sizeof(int));
-	if (buffer == NULL)
-	{
-		*buffer = 0;
+	buffer = malloc((max - min) * sizeof(int));
+	if (buffer == 0)
 		return (-1);
+	index = 0;
+	while (min < max)
+	{
+		buffer[index++] = min++;
 	}
 	*range = buffer;
-	index = 0;
-	while (index <= inter_range)
-	{
-		buffer[index] = min + index;
-		index++;
-	}
-	return (inter_range + 1);
+	return (max - min);
 }
