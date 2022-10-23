@@ -2,12 +2,8 @@
 ### ไปนอนบ้างนะ
 ##### [42intra](https://profile.intra.42.fr)
 😈 = เดี๋ยวส่งทีเดียวผ่าน
-<<<<<<< HEAD
-| project | progress | score | about |
-=======
 ❤️‍🔥 = ready to submit
 | project | progress | score | about | 
->>>>>>> 41f8560e0fa7f4ccae2d3de732030582722826ca
 | --- | --- | --- | --- |
 | shell00 | ✅ | 50/100 | 🦀 |
 |shell01 | ? | ?/100 | 🦀🦞 |
