@@ -11,10 +11,10 @@
 | c01 | ✅ | 92/100 | aritmetic 🔢 |
 | c02 | ✅ | 55/100 | strings 🧵 |
 | c03 | ✅ | 50/100 | strings++ |
-| c04 | ❌ 😈❤️‍🔥| ?/100 | str + atoi |
+| c04 | ✅ | ?/100 | str + atoi |
 | c05 | X  😈❤️‍🔥| ?/100 | recursion ∞ |
-| c06 | X  😈❤️‍🔥| ?/100 | terminal arguments 📟 |
-| c07 | X ❤️‍🔥 | ?/100 | base_n + strsplit |
+| c06 | ✅🔥| ?/100 | terminal arguments 📟 |
+| c07 | ❌ ❤️‍🔥 | ?/100 | base_n + strsplit |
 | c08 | X ❤️‍🔥| ?/100 | headers 🎓 |
 | c09 | X ❤️‍🔥| ?/100 | Make library 📚 |
 | c10 | X | ?/100 | display cat tail |
