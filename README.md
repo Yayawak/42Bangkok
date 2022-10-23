@@ -12,8 +12,8 @@
 | c02 | ✅ | 55/100 | strings 🧵 |
 | c03 | ✅ | 50/100 | strings++ |
 | c04 | ✅ | ?/100 | str + atoi |
-| c05 | X  😈❤️‍🔥| ?/100 | recursion ∞ |
-| c06 | ✅🔥| ?/100 | terminal arguments 📟 |
+| c05 | ✅ | ?/100 | recursion ∞ |
+| c06 | ✅ | ?/100 | terminal arguments 📟 |
 | c07 | ❌ ❤️‍🔥 | ?/100 | base_n + strsplit |
 | c08 | X ❤️‍🔥| ?/100 | headers 🎓 |
 | c09 | X ❤️‍🔥| ?/100 | Make library 📚 |
