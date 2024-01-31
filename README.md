@@ -3,7 +3,7 @@
 ##### [42intra](https://profile.intra.42.fr)
 😈 = เดี๋ยวส่งทีเดียวผ่าน
 ❤️‍🔥 = ready to submit
-| project | progress | score | about | 
+| project | progress | score | about |
 | --- | --- | --- | --- |
 | shell00 | ✅ | 50/100 | 🦀 |
 |shell01 | ? | ?/100 | 🦀🦞 |
